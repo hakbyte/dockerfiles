@@ -5,5 +5,6 @@ RUN xcaddy build \
 
 FROM caddy:2.3.0-alpine
 
-COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+RUN apk add --no-cache tzdata
 
+COPY --from=builder /usr/bin/caddy /usr/bin/caddy
